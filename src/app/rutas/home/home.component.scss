@@ -1,0 +1,20 @@
+::ng-deep.p-card-header{
+    background-color: rgb(159, 53, 150);
+    color: rgb(0, 250, 237);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+::ng-deep.p-card{
+    border: solid rgb(0, 250, 237);
+}
+
+::ng-deep.p-card:hover{
+    -webkit-transform:scale(1.10);
+    -moz-transform:scale(1.10);
+    -ms-transform:scale(1.10);
+    -o-transform:scale(1.10);
+    transform:scale(1.10);
+    border: solid rgb(159, 53, 150);
+}

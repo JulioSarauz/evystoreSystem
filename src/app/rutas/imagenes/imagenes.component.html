@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-sm-12">
+        
+        <p-toast></p-toast>
+
+<div class="card" style="text-align: center;">
+
+    <div class="row" style="background-color: rgb(159, 53, 150); color: rgb(0, 250, 237); padding-top: 1%; margin-top: 0px;">
+        <div class="col-sm-2" >
+            <button pButton pRipple style="color: rgb(159, 53, 150);" type="button" label="REGRESAR" (click)="regresarIncio()"
+            class="p-button-rounded p-button-warning" icon="pi pi-backward"></button>
+        </div>
+        <div class="col-sm-10" ><h1 >GENERAR IMAGENES</h1></div>  
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6" >
+            <h1>ANCHO</h1>
+        </div>
+        <div class="col-sm-6" >
+            <h1>ALTO</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        
+        <div class="col-sm-6" >
+            <p-inputNumber [(ngModel)]="anchoImg" mode="decimal" [showButtons]="true" buttonLayout="vertical" spinnerMode="vertical"
+            decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+        
+        </div>
+       
+        <div class="col-sm-6" >
+            <p-inputNumber [(ngModel)]="altoImg" mode="decimal" [showButtons]="true" buttonLayout="vertical" spinnerMode="vertical"
+            decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+    
+        </div>
+
+
+    
+    </div>
+
+ 
+
+    <p-fileUpload  name="demo[]" 
+    chooseLabel="Seleccionar"
+    cancelLabel="No generar"
+    [showCancelButton]="false"
+    [customUpload]="true"
+    (uploadHandler)="generarPDF($event)"
+    uploadLabel="GenrarPDF" 
+    uploadIcon="pi pi-file-pdf"
+    (onUpload)="onUpload($event)" 
+    [multiple]="true"
+    accept="image/*">
+
+            <ng-template pTemplate="content">
+                <ul *ngIf="archivosSubidos.length">
+                    <!-- <li *ngFor="let file of archivosSubidos">{{file.name}} - {{file.size}} bytes</li> -->
+                </ul>
+            </ng-template>
+    </p-fileUpload>
+
+</div>
+
+
+
+    </div>
+  </div>
